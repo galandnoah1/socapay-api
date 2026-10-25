@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: socapay-api
+
+provider:
+  latency: 80
+  orange-money:
+    fail-rate: 0.02  #taux d'échec accepté
+  mtn-momo:
+    fail-rate: 0.2
+  visa:
+    fail-rate: 0.1
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus,metrics
+  metrics:
+    tags:
+      application: ${spring.application.name}
